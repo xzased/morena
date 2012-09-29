@@ -18,8 +18,11 @@ config = {
     }
 }
 
+cherrypy.config.update({'engine.autoreload_on': False})
 cherrypy.lib.sessions.MySession = MySession
-
 cherrypy.tree.mount(root, '/', config=config)
-cherrypy.engine.start()
-cherrypy.engine.block()
+
+if __name__ == '__main__':
+    cherrypy.config.update({'engine.autoreload_on': True})
+    cherrypy.engine.start()
+    cherrypy.engine.block()
