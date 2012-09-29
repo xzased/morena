@@ -1,0 +1,22 @@
+<div class="background">
+    <div class="popup">
+        <div class="close"> X </div>
+        <h2 class="popup-header"> Agregar Articulo </h2>
+        <form id="mod-articulo">
+            <input type="hidden" name="_id" value="{{articulo['_id']}}" />
+            <label for="titulo"> Titulo </label>
+            <input id="titulo" class="gral-input" type="text" name="titulo" value="{{ articulo['titulo'] }}"/> <br />
+            <label for="categoria"> Categoria </label>
+            <select id="categoria" name="categoria">
+                {% for categoria in categorias %}
+                    <option value="{{ categoria['categoria'] }}"> {{ categoria['categoria'].upper() }}</option>
+                {% endfor %}
+            </select> <br /><br />
+            <textarea id="contenido" name="contenido">{{ articulo['contenido'] }}</textarea> <br />
+            <label for="orden"> Orden </label>
+            <input class="gral-input" id="orden" type="number" name="orden"
+                min="1" max="10" step="1" value="{{ articulo['orden'] }}" />
+            <input type="submit" value="Guardar" />
+        </form>
+    </div>
+</div>

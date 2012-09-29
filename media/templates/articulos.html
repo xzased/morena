@@ -1,0 +1,46 @@
+{% extends "control_base.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="/org/static/javascript/tiny_mce/tiny_mce.js"></script>
+    <script type="text/javascript" src="/org/static/javascript/articulos.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/articulos.css" />
+{% endblock %}
+
+{% block articulos %}
+    <a class="tab active-tab" href="/org/articulos"> ARTICULOS </a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="seccion"> Articulos Publicados </h1>
+    <ul id="actions">
+        <li class="action-item"> <a id="agregar-articulo" class="action-link" href="/org/agregar_articulo"> Agregar </a> </li>
+        <li class="action-item"> <a id="borrar-articulo" class="action-link" href="/org/borrar_articulo"> Borrar </a> </li>
+        <li class="action-item"> <a id="modificar-articulo" class="action-link" href="#"> Modificar </a> </li>
+    </ul>
+    <table id="atable" class="tablita">
+        <thead>
+            <tr>
+                <th></th>
+                <th> FECHA </th>
+                <th> TITULO </th>
+                <th> CATEGORIA </th>
+                <th> ORDEN </th>
+                <th> USUARIO </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set row_class = cycler('odd', 'even') %}
+            {% for articulo in articulos %}
+                <tr class="{{ row_class.next() }}">
+                    <td> <input class="aselect" articulo="{{ articulo['_id'] }}" type="checkbox" /></td>
+                    <td> {{ articulo['fecha'].strftime('%Y-%m-%d %H:%M') }} </td>
+                    <td> {{ articulo['titulo'] }} </td>
+                    <td> {{ articulo['categoria'] }} </td>
+                    <td> {{ articulo['orden'] }} </td>
+                    <td> {{ articulo['usuario'] }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p id="paginator" class='pagelist'>{{ pager.pager() }}</p>
+{% endblock %}

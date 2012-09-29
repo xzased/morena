@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/editorial.css" />
+{% endblock %}
+
+{% block contacto %}
+    <a class="tab active-tab" href="/contacto"> CONTACTO </a>
+{% endblock %}
+
+{% block content %}
+    <div id="editorial">
+        {% for articulo in articulos %}
+            <h2 class="articulo-header"> {{ articulo['titulo'] }} </h2>
+            <span class="articulo-meta"> {{ articulo['fecha'].strftime('%Y-%m-%d %H:%M') }} por {{ articulo['usuario'] }} </span> <br />
+            <div class="articulo-content"> {{ articulo['contenido'] }} </div> <br /><br />
+        {% endfor %}
+        <p id="paginator" class='pagelist'>{{ pager.pager() }}</p>
+    </div>
+{% endblock %}

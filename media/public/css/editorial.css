@@ -1,0 +1,36 @@
+#editorial {
+    background-color: #fff;
+    border: 1px solid #e6b75b;
+    border-radius: 5px;
+    display: table;
+    width: 100%;
+    box-shadow: 0 0 15px #e6b75b;
+    padding: 15px 30px;
+}
+
+#main-articles {
+    display: table-cell;
+    width: 70%;
+    border-right: 1px solid #e8e8e8;
+    padding: 15px 30px;
+}
+
+#other-articles {
+    display: table-cell;
+    width: 30%;
+    padding: 15px 30px;
+}
+
+h2.articulo-header {
+    color: #c20000;
+}
+
+span.articulo-meta {
+    color: #999;
+}
+
+div.articulo-content {
+    margin: 10px 0;
+    color: #444;
+}
+

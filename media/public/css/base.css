@@ -1,0 +1,108 @@
+html {
+    width: 100%;
+    min-width: 1024px;
+    height: 100%;
+    min-height: 600px;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: Arial;
+    font-size: 14px;
+    background: url("/static/images/bg.jpg") no-repeat center center fixed;
+    background-repeat: repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+#header {
+    width: 1000px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+#logo {
+    float: left;
+    margin-top: 10px;
+}
+
+#menu {
+    margin: 0;
+    padding: 0;
+    background: -webkit-linear-gradient(bottom, #b3261b, #992117);
+    float: right;
+    list-style: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 5px #333;
+    border-collapse: collapse;
+}
+
+#menu li {
+    float: left;
+}
+
+#content {
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 30px
+}
+
+.tab {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 20px;
+    display: block;
+}
+
+.menu-item + .menu-item {
+    border-left: 1px solid #555;
+}
+
+.inactive-tab {
+    color: #fff;
+}
+
+.inactive-tab:hover {
+    color: #fff;
+    background-color: #b82418;
+}
+
+.active-tab {
+    color: #fff;
+    background-color: #b82418;
+}
+
+.pagelist {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.pager_curpage {
+    padding: 7px;
+    border: 1px solid #ccc;
+    color: #666;
+    margin: 0 3px;
+}
+
+.pager_link {
+    padding: 7px;
+    border: 1px solid #ccc;
+    color: #444;
+    font-weight: bold;
+    background-color: #ddd;
+}

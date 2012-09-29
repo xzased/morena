@@ -1,0 +1,29 @@
+<div class="background">
+    <div class="close close-gal"> X </div>
+    <div class="table">
+        <div class="row">
+            <div id="thumb-viewer" class="cell">
+                <h2 class="gal-header"> {{ galeria['nombre'] }} </h2>
+                {% for foto in fotos %}
+                    <a id="{{ foto['_id'] }}" class="thumb thumb-view" href="{{ foto['url'] }}">
+                        <img src="{{ foto['thumb-url'] }}" />
+                    </a>
+                {% endfor %}
+            </div>
+            <div id="ver-foto" class="cell">
+                <img class="prev" title="Anterior" src="/static/images/prev.png" />
+                <img class="next" title="Siguiente" src="/static/images/next.png" />
+                <img class="delf" title="Borrar" src="/static/images/delg.png" />
+                {% for foto in fotos %}
+                    <div id="f-{{ foto['_id'] }}" class="img-container">
+                        <img class="foto" src="{{ foto['url'] }}" />
+                        <div class="alt">
+                            <strong>{{ foto['titulo'].upper() }}</strong> subida el {{ galeria['fecha'].strftime('%Y/%m/%d %H:%M') }} por {{ galeria['usuario'] }} <br /><br />
+                            {{ foto['descripcion'] }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

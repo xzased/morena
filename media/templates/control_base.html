@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript" src="/static/javascript/control_base.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="/static/css/control_base.css" />
+        {% block head %} {% endblock %}
+        <title>{% block title %} ADMINISTRACION MORENAJE {% endblock %}</title>
+    </head>
+    <body>
+        <div id="header">
+            <img id="logo" src="static/images/logo.png" />
+            <ul id="menu">
+<!--                <li class="menu-item">
+                    {% block aplicaciones %}
+                        <a class="tab inactive-tab" href="/org/apps"> APPS </a>
+                    {% endblock %}
+                </li>-->
+                <li class="menu-item">
+                    {% block articulos %}
+                        <a class="tab inactive-tab" href="/org/articulos"> ARTICULOS </a>
+                    {% endblock %}
+                </li>
+                <li class="menu-item">
+                    {% block portada %}
+                        <a class="tab inactive-tab" href="/org/portada"> PORTADA </a>
+                    {% endblock %}
+                </li>
+                <li class="menu-item">
+                    {% block galerias %}
+                        <a class="tab inactive-tab" href="/org/galerias"> GALERIAS </a>
+                    {% endblock %}
+                </li>
+<!--                <li class="menu-item">
+                    {% block config %}
+                        <a class="tab inactive-tab" href="/org/config"> CONFIGURACION </a>
+                    {% endblock %}
+                </li>-->
+                <li class="menu-item">
+                    {% block usuarios %}
+                        <a class="tab inactive-tab" href="/org/usuarios"> USUARIOS </a>
+                    {% endblock %}
+                </li>
+		<li class="menu-item">
+		    <a id="logout" class="tab inactive-tab" href="/org/logout"> CERRAR SESION </a>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

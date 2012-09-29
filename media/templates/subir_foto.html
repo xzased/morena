@@ -1,0 +1,24 @@
+<div class="background">
+    <div id="sub-foto-cont" class="popup">
+        <div class="close"> X </div>
+        <h2 class="popup-header"> Agregar Foto </h2>
+        <form id="upload" enctype="multipart/form-data">
+            <label for="titulo-foto"> Titulo </label>
+            <input id="titulo-foto" class="gral-input" type="text" name="titulo" /> <br />
+            <label for="galeria-select"> Galeria </label>
+            <select id="galeria-select" name="galeria_id">
+                {% for galeria in galerias %}
+                    <option value="{{ galeria['_id'] }}"> {{ galeria['nombre'].upper() }}</option>
+                {% endfor %}
+            </select> <br /><br />
+            <label for="upload-input"> Elige un archivo </label>
+            <input id="upload-input" class="gral-input" type="file" name="foto" /> <br /> <br />
+            <label for="desc-foto"> Descripcion </label>
+            <input id="desc-foto" class="gral-input" type="text" name="descripcion" /> <br />
+            <label for="orden"> Orden </label>
+            <input class="gral-input" id="orden" type="number" name="orden"
+                min="1" max="10" step="1" value="1" />
+            <input type="submit" value="SUBIR" />
+        </form>
+    </div>
+</div>

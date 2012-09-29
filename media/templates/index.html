@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="/static/javascript/index.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/index.css" />
+{% endblock %}
+
+{% block principal %}
+    <a class="tab active-tab" href="/"> PRINCIPAL </a>
+{% endblock %}
+
+{% block content %}
+    <div id="showcase">
+        <div class="show">
+            <img src="/static/images/portada1.jpg" />
+        </div>
+    </div>
+    <div id="main">
+            <div id="main-articles">
+            {% for articulo in articulos %}
+                <h2 class="articulo-header"> {{ articulo['titulo'] }} </h2>
+                <span class="articulo-meta"> {{ articulo['fecha'].strftime('%Y-%m-%d %H:%M') }} por {{ articulo['usuario'] }} </span> <br />
+                <div class="articulo-content"> {{ articulo['contenido'] }} </div> <br /><br />
+            {% endfor %}
+            </div>
+            <div id="other-articles">
+            {% for articulo in otros %}
+                <h2 class="articulo-header"> {{ articulo['titulo'] }} </h2>
+                <span class="articulo-meta"> {{ articulo['fecha'].strftime('%Y-%m-%d %H:%M') }} por {{ articulo['usuario'] }} </span> <br />
+                <div class="articulo-content"> {{ articulo['contenido']|truncate(255,False,'...') }} </div> <br /><br />
+            {% endfor %}
+            </div>
+    </div>
+{% endblock %}

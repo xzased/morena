@@ -1,0 +1,46 @@
+{% extends "control_base.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="/static/javascript/usuarios.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/usuarios.css" />
+{% endblock %}
+
+{% block usuarios %}
+    <a class="tab active-tab" href="/org/usuarios"> USUARIOS </a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="seccion"> Usuarios </h1>
+    <ul id="actions">
+        <li class="action-item"> <a id="agregar-usuario" class="action-link" href="#"> Agregar </a> </li>
+        <li class="action-item"> <a id="borrar-usuario" class="action-link" href="#"> Borrar </a> </li>
+        <li class="action-item"> <a id="modificar-usuario" class="action-link" href="#"> Modificar </a> </li>
+    </ul>
+    <table id="atable" class="tablita">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th> NOMBRE </th>
+                <th> USUARIO </th>
+                <th> COMISIONES </th>
+                <th> NIVEL </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set row_class = cycler('odd', 'even') %}
+            {% for usuario in usuarios %}
+                <tr class="{{ row_class.next() }}">
+                    <td> <input class="uselect" usuario="{{ usuario['_id'] }}" type="checkbox" /></td>
+                    <td> {% if usuario['foto'] %} <img src="{{ usuario['foto'] }}" />
+                            {% else %} <img src="/static/images/unknown.jpg" /> {% endif %}
+                    </td>
+                    <td> {{ usuario['nombre'] }} {{ usuario['apellido'] }} </td>
+                    <td> {{ usuario['usuario'] }} </td>
+                    <td> {% for comision in usuario['comision'] %} {{comision}}, {% endfor %}  </td>
+                    <td> {% for nivel in usuario['nivel'] %} {{nivel}} {% if not loop.last %}, {% endif %} {% endfor %}  </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

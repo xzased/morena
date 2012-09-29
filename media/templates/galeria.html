@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="/static/javascript/galeria.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/galeria.css" />
+{% endblock %}
+
+{% block galeria %}
+    <a class="tab active-tab" href="/galeria"> GALERIAS </a>
+{% endblock %}
+
+{% block content %}
+    <div id="galeria">
+        {% for galeria, fotos in galerias %}
+            <div id="{{ galeria['_id'] }}" class="gal {% if fotos %} gal-active {% endif %}">
+                <h3> {{ galeria['nombre'].upper() }} </h3>
+                <div class="thumbs">
+                {% if fotos %}
+                    {% for foto in fotos %}
+                        <img class="thumb" src="{{ foto['thumb-url'] }}" />
+                    {% endfor %}
+                {% else %}
+                        <img class="thumb unknown" class="thumb" src="/static/images/unknown.jpg" />
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        <p id="paginator" class='pagelist'>{{ pager.pager() }}</p>
+    </div>
+{% endblock %}

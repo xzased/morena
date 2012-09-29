@@ -1,0 +1,42 @@
+<div class="background">
+    <div class="popup">
+        <div class="close"> X </div>
+        <h2 class="popup-header"> Agregar Usuario </h2>
+        <form id="user">
+            <label for="username"> Nombre de Usuario </label>
+            <input id="username" class="gral-input" type="text" name="username"
+		{% if user %} value="{{ user['username'] }}" {% endif %} /> <br />
+            <label for="password"> Contraseña </label>
+            <input id="password" class="gral-input" type="password" name="password"
+		{% if user %} value="{{ user['password'] }}" {% endif %} /> <br />
+            <label for="nombre"> Nombre </label>
+            <input id="nombre" class="gral-input" type="text" name="nombre"
+		{% if user %} value="{{ user['nombre'] }}" {% endif %} /> <br />
+            <label for="apellido"> Apellido </label>
+            <input id="apellido" class="gral-input" type="text" name="apellido"
+		{% if user %} value="{{ user['apellido'] }}" {% endif %} /> <br />
+            <label for="comision"> Comision(es) </label>
+            <select id="comision" name="comision">
+                {% for comision in comisiones %}
+                    <option value="{{ comision['comision'] }}"
+                    {% if user and comision['comision'] in user['comision'] %}
+                    selected="selected"
+                    {% endif %}
+                    > {{ comision['comision'].upper() }}</option>
+                {% endfor %}
+            </select> <br /><br />
+            <select id="nivel" name="nivel">
+                {% for comision in comisiones %}
+                    <option value="{{ nivel['nivel'] }}"
+                    {% if user and nivel['nivel'] in user['nivel'] %}
+                    selected="selected"
+                    {% endif %}
+                    > {{ nivel['nivel'].upper() }}</option>
+                {% endfor %}
+            </select> <br /><br />
+            <label for="foto"> Foto </label>
+            <input id="foto" class="gral-input" type="file" name="foto" /> <br /> <br />
+            <input type="submit" value="Agregar" />
+        </form>
+    </div>
+</div>

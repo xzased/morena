@@ -1,0 +1,293 @@
+#agregar-galeria {
+    background-image: url("/org/static/images/add.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 34px;
+}
+
+#borrar-galeria {
+    background-image: url("/org/static/images/del.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 34px;
+}
+
+#subir-foto {
+    background-image: url("/org/static/images/upload.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 34px;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 1024px;
+    height: 100%;
+    min-height: 600px;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.popup {
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 700px;
+    height: 570px;
+    top: 50%;
+    margin: -300px auto 0 auto;
+    z-index: 205;
+    padding: 20px;
+}
+
+.close {
+    float: right;
+    margin: -10px -10px 0 0;
+    cursor: pointer;
+}
+
+.close-gal {
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+}
+
+.popup-header {
+    color: #555;
+    font-size: 24px;
+    display: inline-block;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+#add-gal-cont {
+    width: 520px;
+    height: 250px;
+    top: 50%;
+    margin: -125px auto 0 auto;
+}
+
+#sub-foto-cont {
+    width: 520px;
+    height: 370px;
+    top: 50%;
+    margin: -185px auto 0 auto;
+}
+
+.sub {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+}
+
+.gral-input {
+    padding: 5px 7px 3px 7px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    outline: none;
+    display: inline;
+}
+
+input[type="text"] {
+    display: block;
+    width: 500px;
+    font-size: 20px;
+    color: #b82418;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    display: block;
+    width: 507px;
+    font-size: 18px;
+    outline: none;
+    color: #555;
+    background-color: #fff;
+    padding: 0 7px 0 0;
+}
+
+input[type="submit"] {
+    padding: 5px 7px 3px 7px;
+    color: #555;
+    width: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    outline: none;
+    display: block;
+    float: right;
+}
+
+select {
+    padding: 3px 7px 1px 7px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    color: #555;
+}
+
+#contenido_tbl {
+    width: 100%;
+    height: 200px;
+}
+
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+}
+
+#galerias {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+input.gal-checker {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 100;
+}
+
+div.gal {
+    width: 300px;
+    max-width: 300px;
+    height: 180px;
+    min-height: 180px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+div.gal:hover {
+    background-color: #992117;
+    box-shadow: 0 0 10px #992117;
+    color: #fff;
+}
+
+div.thumbs {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+p.no-hay {
+    margin: 40px 0 40px 0;
+    padding: 0;
+}
+
+.thumb {
+    padding: 10px;
+}
+
+img.foto {
+    height: 600px;
+}
+
+.table {
+    display: table;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    margin-top: -300px;
+}
+
+.row {
+    display: table-row;
+    width: 100%;
+}
+
+.cell {
+    display: table-cell;
+    width: 50%;
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    vertical-align: top;
+    position: relative;
+}
+
+.gal-header {
+    color: #fff;
+}
+
+img.delf {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+    visibility: hidden;
+    z-index: 205;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+}
+
+img.delf:hover {
+    opacity:0.9;
+    filter:alpha(opacity=90);
+}
+
+img.prev {
+    position: absolute;
+    top: 280px;
+    left: 10px;
+    cursor: pointer;
+    visibility: hidden;
+    z-index: 205;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+}
+
+img.prev:hover {
+    opacity:0.9;
+    filter:alpha(opacity=90);
+}
+
+img.next {
+    position: absolute;
+    top: 280px;
+    right: 10px;
+    visibility: hidden;
+    cursor: pointer;
+    z-index: 205;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+}
+
+img.next:hover {
+    opacity:0.9;
+    filter:alpha(opacity=90);
+}
+
+div.img-container {
+    position: relative;
+    visibility: hidden;
+    display: none;
+}
+
+div.alt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 96%;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, .9);
+    color: #fff;
+    text-align: left;
+}

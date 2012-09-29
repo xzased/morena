@@ -1,0 +1,38 @@
+{% extends "control_base.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="/org/static/javascript/galerias.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/galerias.css" />
+{% endblock %}
+
+{% block galerias %}
+    <a class="tab active-tab" href="/org/galerias"> GALERIAS </a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="seccion"> Galerias </h1>
+    <ul id="actions">
+        <li class="action-item"> <a id="agregar-galeria" class="action-link" href="#"> Agregar Galeria</a> </li>
+        <li class="action-item"> <a id="subir-foto" class="action-link" href="#"> Subir Foto</a> </li>
+        <li class="action-item"> <a id="borrar-galeria" class="action-link" href="#"> Eliminar Galeria</a> </li>
+    </ul>
+    <div id="galerias">
+        {% for galeria, fotos in galerias %}
+            <div id="{{ galeria['_id'] }}" class="gal {% if fotos %} gal-active {% endif %}">
+                <input type="checkbox" class="gal-checker" id="{{ galeria['_id'] }}" />
+                <h3> {{ galeria['nombre'].upper() }} </h3>
+                <span class="sub">  creada el {{ galeria['fecha'].strftime('%Y/%m/%d %H:%M') }} por {{ galeria['usuario'] }} </span>
+                <div class="thumbs">
+                {% if fotos %}
+                    {% for foto in fotos %}
+                        <img class="thumb" src="{{ foto['thumb-url'] }}" />
+                    {% endfor %}
+                {% else %}
+                        <img class="thumb unknown" class="thumb" src="/static/images/unknown.jpg" />
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <p id="paginator" class='pagelist'>{{ pager.pager() }}</p>
+{% endblock %}
