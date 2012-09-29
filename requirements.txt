@@ -1,5 +1,5 @@
 pymongo==2.2.1
 cherrypy==3.2.2
 jinja2==2.6
+PIL==1.1.6
 flup
-PIL
