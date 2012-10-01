@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append('/root/.virtualenvs/morena')
+
 import cherrypy
 from morena.root import *
 from morena.lib import *
@@ -18,9 +22,7 @@ config = {
     }
 }
 
+cherrypy.server.unsubscribe()
 cherrypy.config.update({'engine.autoreload_on': False})
 cherrypy.lib.sessions.MySession = MySession
-app = cherrypy.tree.mount(root, '/', config=config)
-
-def application(environ, start_response):
-    return app(environ, start_response)
+application = cherrypy.tree.mount(root, '/', config=config)
