@@ -1,11 +1,7 @@
-import sys
-
-sys.path.append('/root/.virtualenvs/morena')
-
 import cherrypy
-from morena.root import *
-from morena.lib import *
-from morena.session import *
+from root import *
+from lib import *
+from session import *
 
 config = {
     '/static': {
