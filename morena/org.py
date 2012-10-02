@@ -14,7 +14,7 @@ class Org:
     @cherrypy.expose
     def index(self):
         if cherrypy.session.get('wop', None):
-            raise cherrypy.HTTPRedirect("/org/panel")
+            raise cherrypy.HTTPRedirect("/org/articulos")
         tmpl = env.get_template('login.html')
         return tmpl.render()
 
