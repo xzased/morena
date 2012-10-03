@@ -12,7 +12,7 @@ config = {
         'tools.staticdir.on': True,
         'tools.staticdir.dir': os.path.join(current_dir, 'media/fotos')
     },
-    '/' : {
+    '/org' : {
         'tools.sessions.on': True,
         'tools.sessions.storage_type': 'my'
     }

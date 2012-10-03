@@ -14,11 +14,11 @@ config = {
     },
     '/' : {
         'tools.sessions.on': True,
-        'tools.sessions.storage_type': 'my'
+        'tools.sessions.storage_type': 'my',
+        'engine.autoreload_on': False
     }
 }
 
 cherrypy.server.unsubscribe()
-cherrypy.config.update({'engine.autoreload_on': False})
 cherrypy.lib.sessions.MySession = MySession
 application = cherrypy.tree.mount(root, '/', config=config)

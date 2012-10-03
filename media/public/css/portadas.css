@@ -1,19 +1,19 @@
 #agregar-portada {
-    background-image: url("/org/static/images/add.png");
+    background-image: url("/static/images/add.png");
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 34px;
 }
 
 #borrar-portada {
-    background-image: url("/org/static/images/del.png");
+    background-image: url("/static/images/del.png");
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 34px;
 }
 
 #modificar-portada {
-    background-image: url("/org/static/images/mod.png");
+    background-image: url("/static/images/mod.png");
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 34px;

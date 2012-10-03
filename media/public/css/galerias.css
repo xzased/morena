@@ -1,19 +1,19 @@
 #agregar-galeria {
-    background-image: url("/org/static/images/add.png");
+    background-image: url("/static/images/add.png");
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 34px;
 }
 
 #borrar-galeria {
-    background-image: url("/org/static/images/del.png");
+    background-image: url("/static/images/del.png");
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 34px;
 }
 
 #subir-foto {
-    background-image: url("/org/static/images/upload.png");
+    background-image: url("/static/images/upload.png");
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 34px;
